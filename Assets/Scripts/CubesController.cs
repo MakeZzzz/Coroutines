@@ -18,7 +18,7 @@ public class CubesController : MonoBehaviour
     
     private Color[] _colors = { Color.black, Color.clear, Color.gray, Color.red, Color.yellow, Color.green,Color.magenta, Color.cyan};
     private List<GameObject> _cubes = new List<GameObject>();
-    private int k;
+    
     void Start()
     {
         StartCoroutine(StartCubesSpawn());
@@ -29,7 +29,7 @@ public class CubesController : MonoBehaviour
         var startPosition = _startposition.transform.position;
         for (int i = 0; i < _numberOfCubes/_cubesLine; i++)
         {
-            for (k = 0; k < _cubesLine; k++)
+            for (int k = 0; k < _cubesLine; k++)
             {
                 var cube = Instantiate(_cube);
                 cube.transform.position = startPosition;
@@ -37,7 +37,6 @@ public class CubesController : MonoBehaviour
                 _cubes.Add(cube);
                 yield return new WaitForSeconds(_timeBetweenAppearances);
             }
-            k = 0;
             startPosition.x -= _stepBetweenCubes;
             startPosition.z = _startposition.transform.position.z;
         }
