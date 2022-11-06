@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class CubesController : MonoBehaviour
 {
     [SerializeField] private GameObject _cube;
-    [SerializeField] private GameObject _gameObject;
+    [SerializeField] private GameObject _startposition;
     [SerializeField] private float _numberOfCubes;
     [SerializeField] private float _cubesLine;
     [SerializeField] private float _stepBetweenCubes;
@@ -26,7 +26,7 @@ public class CubesController : MonoBehaviour
 
     private IEnumerator StartCubesSpawn()
     {
-        var startPosition = _gameObject.transform.position;
+        var startPosition = _startposition.transform.position;
         for (int i = 0; i < _numberOfCubes/_cubesLine; i++)
         {
             for (k = 0; k < _cubesLine; k++)
@@ -39,7 +39,7 @@ public class CubesController : MonoBehaviour
             }
             k = 0;
             startPosition.x -= _stepBetweenCubes;
-            startPosition.z = _gameObject.transform.position.z;
+            startPosition.z = _startposition.transform.position.z;
         }
     }
     private IEnumerator CubesColorChange()
