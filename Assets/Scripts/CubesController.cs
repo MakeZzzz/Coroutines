@@ -17,6 +17,10 @@ public class CubesController : MonoBehaviour
     [SerializeField] private float _colorChangeTime;
     
     private List<GameObject> _cubes = new List<GameObject>();
+<<<<<<< HEAD
+=======
+    
+>>>>>>> origin/master
     void Start()
     {
         StartCoroutine(StartCubesSpawn());
