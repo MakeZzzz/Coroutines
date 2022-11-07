@@ -17,14 +17,12 @@ public class CubesController : MonoBehaviour
     [SerializeField] private float _colorChangeTime;
     
     private List<GameObject> _cubes = new List<GameObject>();
-<<<<<<< HEAD
-=======
-    
->>>>>>> origin/master
+
     void Start()
     {
         StartCoroutine(StartCubesSpawn());
     }
+    
     private IEnumerator StartCubesSpawn()
     {
         var startPosition = _startposition.transform.position;
@@ -42,6 +40,7 @@ public class CubesController : MonoBehaviour
             startPosition.z = _startposition.transform.position.z;
         }
     }
+    
     private IEnumerator CubesColorChange()
     {
         var color = Random.ColorHSV();
@@ -52,6 +51,7 @@ public class CubesController : MonoBehaviour
             yield return new WaitForSeconds(_colorChangeInterval);
         }
     }
+    
     private IEnumerator CubeColorChange(Renderer cubeRenderer, float colorChangeTime, Color finalColor)
     {
         var startColor = cubeRenderer.material.color;
@@ -65,6 +65,7 @@ public class CubesController : MonoBehaviour
         }
         cubeRenderer.material.color = finalColor;
     }
+    
     [UsedImplicitly]
     public void StartChangeColor()
     {
