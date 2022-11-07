@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cube: {fileID: 4081070031372772223, guid: a26330430191d4a4fb69e60c13664976, type: 3}
-  _gameObject: {fileID: 1342968350}
+  _startposition: {fileID: 1342968350}
   _numberOfCubes: 400
   _cubesLine: 20
   _stepBetweenCubes: 15
